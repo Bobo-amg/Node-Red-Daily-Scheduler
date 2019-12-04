@@ -1,0 +1,92 @@
+<script type="text/javascript">
+
+    var curyear = new Date();
+
+    RED.nodes.registerType('daily-scheduler', {
+        category: 'function',
+        color: '#D8BFD8',
+        defaults: {
+            name: { value: "" },
+            idx: { value: "" },
+            year: { value: curyear.getFullYear() },
+            month: { value: "" },
+            day: { value: "" },
+            hour: { hour: "" },
+            minute: { value: "" },
+            recur: { value: false },
+            early: { value: "0" },
+            desc: { value: "" }
+
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "font-awesome/calendar",
+        label: function () {
+            return this.name || "daily-scheduler";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="daily-scheduler">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-year"><i class="icon-tag"></i> Year</label>
+        <input type="text" id="node-input-year" placeholder="year" style="width:50px">
+    </div>
+    
+    <div class="form-row">
+        <label for="node-input-month"><i class="icon-tag"></i> Month</label> <label style="width:5px"> </label>
+        <input type="text" id="node-input-month" placeholder="0-11" style="width:50px">
+        <label style="width:20px"> </label>
+        <label for="node-input-day"><i class="icon-tag"></i> Day</label>
+        <input type="text" id="node-input-day" placeholder="1-31" style="width:50px">
+       
+
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-hour"><i class="icon-tag"></i> Hour</label> <label style="width:5px"> </label>
+        <input type="text" id="node-input-hour" placeholder="0-23" style="width:50px">
+        <label style="width:20px"> </label>
+        <label for="node-input-minute"><i class="icon-tag"></i> Minute</label>
+        <input type="text" id="node-input-minute" placeholder="0-59" style="width:50px">
+    </div>
+    
+    <div class="form-row">
+        <label for="node-input-recur" >Monthly Recurring <label style="width:10px"> </label>
+        <input type="checkbox" id="node-input-recur" style="width: auto">
+        
+    </div>
+
+    <div class="form-row">
+            <label for="node-input-early"><i class="icon-tag"></i> Early Reminders</label>
+            <input type="text" id="node-input-early" placeholder="0-6" style="width:50px">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-idx"><i class="icon-tag"></i> Alarm index</label>
+        <input type="text" id="node-input-idx" placeholder="index">
+    </div>
+
+
+
+    <div class="form-row">
+            <label for="node-input-desc"><i class="icon-tag"></i> Description</label>
+            <input type="text" id="node-input-desc" placeholder="Describe the Alarm">
+    </div>
+    
+    
+    
+</script>
+
+<script type="text/x-red" data-help-name="daily-scheduler">
+    <p>This node triggers when the selected date (and time) has been reached, perhaps! </p></br>
+
+    <p>Mandatory fields are Description, Month, Day, Hour and Minute. All else is optional.
+	
+	
+	<p>It uses the node-schedule node (https://github.com/node-schedule/node-schedule)</p>
+</script>

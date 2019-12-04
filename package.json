@@ -1,0 +1,24 @@
+{
+  "name": "node-red-ex-daily-scheduler",
+  "version": "0.0.9",
+  "description": "Node Red Node to provide daily alarms with enhancements.",
+  "keywords": [
+    "node-red",
+    "daily",
+    "scheduler"
+  ],
+  "author": "Bobo",
+  "license": "",
+  "dependencies": {
+    "node-schedule": "1.3.2"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "node-red": {
+    "nodes": {
+      "daily-scheduler": "daily-scheduler.js"
+    }
+  }
+}

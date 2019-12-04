@@ -1,1 +1,1 @@
-# Node-Red-Scheduler
+# Node-Red-Daily-Scheduler
